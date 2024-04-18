@@ -45,11 +45,11 @@ class GeneralNonTransitiveOnePlay
           puts("Your move: #{@moves[user_move-1]}")
           puts("Computer move: #{@moves[@cmi]}")
           case @rules.verdict(@cmi, user_move-1)
-          when "Draw"
+          when :draw
             puts("Draw!")
-          when "Lose"
+          when :lose
             puts("You lose!")
-          when "Win"
+          when :win
             puts("You Win!")
           end
           puts("HMAC key: #{@key}")
