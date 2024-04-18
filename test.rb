@@ -1,8 +1,11 @@
 require 'bundler/setup'
 require 'minitest/autorun'
-require 'minitest/test'
-require 'minitest/spec'
+require 'minitest/reporters'
 require_relative './gentopg.rb'
+
+Minitest::Reporters.use! [
+  Minitest::Reporters::SpecReporter.new
+]
 
 
 def getInstanceVariables(obj, ivars=[])
